@@ -2,7 +2,7 @@ function getExcerciseInfo() {
     return {
         excerciseNumber: 5,
         isAnimated: false,
-        source: "https://www.umweltbundesamt.de"
+
     };
 }
 
@@ -20,7 +20,7 @@ function draw(two) {
         height = 400 - margin.top - margin.bottom;
 
     // append the svg object to the body of the page
-    const svg = d3.select("div")
+    const svg = d3.select("#canvas")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)

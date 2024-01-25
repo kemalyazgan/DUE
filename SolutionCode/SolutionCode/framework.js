@@ -42,13 +42,13 @@ function main() {
     if (document.getElementById("canvas")) return; // already initialised
 
     const params = {
-        width: 550,
-        height: 450,
+        width: 1,
+        height: 1,
         xRangeMin: 0,
         xRangeMax: 100,
         yRangeMin: 0,
         yRangeMax: 100,
-        margin: 40,
+        margin: 0,
     };
 
     const canvas = initialiseWebpage(params);
