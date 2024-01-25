@@ -42,8 +42,8 @@ function main() {
     if (document.getElementById("canvas")) return; // already initialised
 
     const params = {
-        width: 1,
-        height: 1,
+        width: 500,
+        height: 50,
         xRangeMin: 0,
         xRangeMax: 100,
         yRangeMin: 0,
