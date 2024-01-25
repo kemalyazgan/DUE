@@ -18,12 +18,13 @@ function draw(two) {
     const margin = {top: 10, right: 30, bottom: 30, left: 30},
         width = 500 - margin.left - margin.right,
         height = 400 - margin.top - margin.bottom;
+        legend = 100;
 
     // append the svg object to the body of the page
     const svg = d3.select("#canvas")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
+        .attr("height", height + margin.top + margin.bottom + 100)
         .append("g")
         .attr("transform", `translate(${margin.left},${margin.top})`);
 
@@ -72,7 +73,7 @@ function draw(two) {
             .join("rect")
             .attr("x", 1)
             .attr("transform", function(d) { return `translate(${x(d.x0)} , ${y(d.length)})`; })
-            .attr("width", function(d) { return x(d.x1) - x(d.x0) -1; })
+            .attr("width", 38.64)
             .attr("height", function(d) { return height - y(d.length); })
             .style("fill", "#69b3a2")
             .style("opacity", 0.6);
@@ -83,7 +84,7 @@ function draw(two) {
             .join("rect")
             .attr("x", 1)
             .attr("transform", function(d) { return `translate(${x(d.x0)} , ${y(d.length)})`; })
-            .attr("width", function(d) { return x(d.x1) - x(d.x0) - 1; })
+            .attr("width", 38.64)
             .attr("height", function(d) { return height - y(d.length); })
             .style("fill", "#404080")
             .style("opacity", 0.6);
@@ -94,16 +95,19 @@ function draw(two) {
             .join("rect")
             .attr("x", 1)
             .attr("transform", function(d) { return `translate(${x(d.x0)} , ${y(d.length)})`; })
-            .attr("width", function(d) { return x(d.x1) - x(d.x0) - 1; })
+            .attr("width", 38.64)
             .attr("height", function(d) { return height - y(d.length); })
             .style("fill", "#728FCE")
             .style("opacity", 0.6);
 
 // Handmade legend
-        svg.append("circle").attr("cx", 300).attr("cy", 7).attr("r", 6).style("fill", "#69b3a2");
-        svg.append("circle").attr("cx", 300).attr("cy", 37).attr("r", 6).style("fill", "#404080");
-        svg.append("text").attr("x", 320).attr("y", 10).text("Year 2021").style("font-size", "15px").attr("alignment-baseline", "middle");
-        svg.append("text").attr("x", 320).attr("y", 40).text("Year 2022").style("font-size", "15px").attr("alignment-baseline", "middle");
+        svg.append("circle").attr("cx", 100).attr("cy", 400).attr("r", 6).style("fill", "#69b3a2");
+        svg.append("circle").attr("cx", 200).attr("cy", 400).attr("r", 6).style("fill", "#404080");
+        svg.append("circle").attr("cx", 300).attr("cy", 400).attr("r", 6).style("fill", "#728FCE");
+        svg.append("text").attr("x", 110).attr("y", 400).text("Year 2021").style("font-size", "15px").attr("alignment-baseline", "middle");
+        svg.append("text").attr("x", 210).attr("y", 400).text("Year 2022").style("font-size", "15px").attr("alignment-baseline", "middle");
+        svg.append("text").attr("x", 310).attr("y", 400).text("Year 2023").style("font-size", "15px").attr("alignment-baseline", "middle");
+
     });
 
 }
